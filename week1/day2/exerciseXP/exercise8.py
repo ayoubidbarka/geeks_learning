@@ -1,4 +1,3 @@
-# Star Wars quiz data
 data = [
     {"question": "What is Baby Yoda's real name?", "answer": "Grogu"},
     {"question": "Where did Obi-Wan take Luke after his birth?", "answer": "Tatooine"},
