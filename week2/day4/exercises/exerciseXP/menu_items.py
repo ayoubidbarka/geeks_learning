@@ -1,5 +1,6 @@
 import psycopg2
 
+
 HOSTNAME = 'localhost'
 USERNAME = 'postgres'
 PASSWORD = '0987'
