@@ -8,6 +8,7 @@ console.log(colors)
 for (let i = 0 ; i < colors.length ; i++ ){
     console.log(i+1 ,"choice is ", colors[i]);
 }
+console.log(colors)
 //3
 let array_of_siffixes = ["st","nd","rd"]
 for(let i = 0 ; i < colors.length ; i++){
