@@ -1,3 +1,24 @@
+ --exercise1
+ SELECT * 
+FROM item
+ORDER BY price ASC;
+
+
+SELECT * 
+FROM item
+WHERE price >= 80
+ORDER BY price DESC;
+
+
+SELECT first_name, last_name, email
+FROM customer
+ORDER BY first_name ASC
+LIMIT 3;
+
+SELECT last_name
+FROM customer
+ORDER BY last_name DESC;
+--exercise2
 select * from customer
 select first_name || ' ' || last_name as full_name from customer
 select create_date from customer
@@ -18,15 +39,32 @@ select customer.first_name , customer.last_name, payment.amount ,payment.payment
    on customer.customer_id = payment.customer_id 
     order by customer.customer_id asc ;
 
+--question 13
+select film_id , film.title 
+from film LEFT JOIN inventory ON film.id = inventory.film_id
+WHERE 
+    inventory.movie_id IS NULL;
+--question 14
+SELECT 
+    city.name AS city,
+    country.name AS country
+FROM 
+    city
+JOIN 
+    country ON city.country_id = country.id;
 
-
-
-
-
-
-
-
-
-
-
+--question14
+SELECT 
+    customer.id AS customer_id,
+    customer.first_name,
+    customer.last_name,
+    payment.amount,
+    payment.payment_date,
+    payment.staff_id
+FROM 
+    customer
+JOIN 
+    payment ON customer.id = payment.customer_id
+ORDER BY 
+    payment.staff_id;
   
