@@ -1,11 +1,9 @@
 -- Change the language of some films
 UPDATE film
-SET language_id = 2 -- e.g., Italian
+SET language_id = 2 
 WHERE film_id IN (1, 2, 3);
 SELECT * FROM language;
-SHOW CREATE TABLE customer;  -- For MySQL
-
--- OR
+SHOW CREATE TABLE customer; 
 
 SELECT 
     table_name, 
