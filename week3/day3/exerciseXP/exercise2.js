@@ -13,19 +13,18 @@ const prices = {
     "orange": 1.5,
     "blueberry":10
 } 
-const shoppingList = ["banana", "orange", "apple"];
-
-function myBill() {
-  let total = 0;
-
-  for (let item of shoppingList) {
-    if (stock[item] > 0) {
-      total += prices[item];
-      stock[item]--;
+let shoppingList = ['banana', 'orange','apple']
+function myBill(){
+  let total = 0 ;
+  for (let item of shoppingList){
+     if (shoppingList in stock && stock[shoppingList]>0 ){
+      total += prices[item]; 
+      stock[item] -= 1; 
     }
   }
-
-  console.log("Total bill:", total);
+  return total
 }
+  
 const bill = myBill();
-console.log("Total bill:", bill);
+console.log("Total price:", bill);
+console.log("Remaining stock:", stock);

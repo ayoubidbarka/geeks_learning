@@ -1,43 +1,32 @@
-// Step 1: Create an array of book objects
-const allBooks = [
+let allBooks = [
   {
-    title: "The Hobbit",
-    author: "J.R.R. Tolkien",
-    image: "https://m.media-amazon.com/images/I/81t2CVWEsUL._AC_UF1000,1000_QL80_.jpg",
-    alreadyRead: true
+    title : "Start up",
+    author : "Ben Ketai",
+    image : "https://m.media-amazon.com/images/M/MV5BMTAxNTIwNzE5MTJeQTJeQWpwZ15BbWU4MDE2NDQ2MTMy._V1_FMjpg_UX1000_.jpg",
+    alreadyRead : true
   },
   {
-    title: "Clean Code",
-    author: "Robert C. Martin",
-    image: "https://m.media-amazon.com/images/I/41xShlnTZTL._SX374_BO1,204,203,200_.jpg",
+    title: "Atomic Habits",
+    author: "James Clear",
+    image: "https://images-na.ssl-images-amazon.com/images/I/91bYsX41DVL.jpg",
     alreadyRead: false
   }
 ];
-
-// Step 2: Select the <section>
-const section = document.querySelector(".listBooks");
-
-// Step 3: Loop through the books and display each one
+const section = document.querySelector('.listBooks')
 allBooks.forEach(book => {
-  // Create a div for each book
-  const bookDiv = document.createElement("div");
+  const bookDiv = document.createElement('div');
 
-  // Set content: title + author
-  const bookDetails = document.createElement("p");
-  bookDetails.textContent = `${book.title} written by ${book.author}`;
+  const bookInfo = document.createElement('p');
+  bookInfo.textContent = `${book.title} written by ${book.author}`;
 
-  // If already read, make it red
+  const bookImage = document.createElement('img');
+  bookImage.src = book.image;
+  bookImage.style.width = '100px';
+  bookDiv.appendChild(bookInfo);
+  bookDiv.appendChild(bookImage);
+
   if (book.alreadyRead) {
-    bookDetails.style.color = "red";
-  }
-
-  // Create and style the image
-  const bookImg = document.createElement("img");
-  bookImg.src = book.image;
-  bookImg.style.width = "100px";
-
-  // Append elements
-  bookDiv.appendChild(bookDetails);
-  bookDiv.appendChild(bookImg);
+    bookInfo.style.color = 'red';
+  } 
   section.appendChild(bookDiv);
 });
