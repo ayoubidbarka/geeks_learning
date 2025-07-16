@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Juice Bar</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    label { display: block; margin-top: 10px; }
+    input, select, button { margin: 5px 0; padding: 5px; }
+    #juice-output { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h2>🥤 Welcome to the Juice Bar 🥤</h2>
+
+  <label for="size">Choose juice size:</label>
+  <select id="size">
+    <option value="small">Small</option>
+    <option value="medium">Medium</option>
+    <option value="large">Large</option>
+  </select>
+
+  <div id="ingredients">
+    <label>Ingredients (4 in total):</label>
+    <input type="text" placeholder="Ingredient 1" />
+    <input type="text" placeholder="Ingredient 2" />
+    <input type="text" placeholder="Ingredient 3" />
+    <input type="text" placeholder="Ingredient 4" />
+    
+  </div>
+
+  <button id="make-juice">Make My Juice</button>
+
+  <div id="juice-output"></div>
+
+  <script src="exercise8.js"></script>
+</body>
+</html>
