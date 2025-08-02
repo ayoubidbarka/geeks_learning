@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form to JSON</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    #output {
+      white-space: pre-wrap;
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enter your information</h2>
+
+  <form id="myForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="lastName">Last Name:</label><br>
+    <input type="text" id="lastName" name="lastName" required><br><br>
+
+    <input type="submit" value="Send">
+  </form>
+
+  <div id="output"></div>
+
+  <script>
+    const form = document.getElementById('myForm');
+    const output = document.getElementById('output');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      const name = document.getElementById('name').value.trim();
+      const lastName = document.getElementById('lastName').value.trim();
+      const data = {
+        name: name,
+        lastName: lastName
+      };
+      const jsonString = JSON.stringify(data, null, 2);
+      output.textContent = jsonString;
+    });
+  </script>
+
+</body>
+</html>
